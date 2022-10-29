@@ -1,0 +1,61 @@
+name: resto_app_v3
+description: A new Flutter project.
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+
+dependencies:
+  android_alarm_manager_plus: ^2.1.0
+  cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
+  flutter_local_notifications: ^12.0.3
+  google_fonts: ^3.0.1
+  http: ^0.13.5
+  intl: ^0.17.0
+  provider: ^6.0.4
+  readmore: ^2.2.0
+  rxdart: ^0.27.5
+  shared_preferences: ^2.0.15
+  sqflite: ^2.2.0+2
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/Onboarding.png
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
