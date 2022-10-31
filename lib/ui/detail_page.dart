@@ -71,7 +71,7 @@ class _DetailPageState extends State<DetailPage> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(10),
                                       child: Hero(
-                                        tag: "image-resto",
+                                        tag: "image-resto${widget.restaurant.id}",
                                         child: Image.network(
                                           'https://restaurant-api.dicoding.dev/images/medium/${detail.pictureId}',
                                           fit: BoxFit.cover,

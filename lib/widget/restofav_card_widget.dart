@@ -23,9 +23,12 @@ class RestoFavCard extends StatelessWidget {
                 height: 180,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: Image.network(
-                    'https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}',
-                    fit: BoxFit.cover,
+                  child: Hero(
+                    tag: "image-resto${restaurant.id}",
+                    child: Image.network(
+                      'https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}',
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 )),
             const SizedBox(

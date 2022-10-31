@@ -69,9 +69,12 @@ class ListAllPage extends StatelessWidget {
                                           borderRadius: const BorderRadius.only(
                                               topLeft: Radius.circular(10),
                                               topRight: Radius.circular(10)),
-                                          child: Image.network(
-                                            'https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}',
-                                            fit: BoxFit.cover,
+                                          child: Hero(
+                                            tag: "image-resto${restaurant.id}",
+                                            child: Image.network(
+                                              'https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}',
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
                                       ),
