@@ -59,9 +59,11 @@ class _SearchPageState extends State<SearchPage> {
                       ),
                       padding: const EdgeInsets.symmetric(horizontal: 8),
                       child: TextField(
-                        style: TextStyle(color: theme.getTheme() == theme.lightTheme
-                                ? Colors.grey.shade400
-                                : Colors.grey.shade800,),
+                        style: TextStyle(
+                          color: theme.getTheme() == theme.lightTheme
+                              ? Colors.grey.shade400
+                              : Colors.grey.shade800,
+                        ),
                         controller: querySearch,
                         onSubmitted: (searchQuery) {
                           setState(() {

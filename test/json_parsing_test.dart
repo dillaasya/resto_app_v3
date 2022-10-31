@@ -1,14 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
-//import 'package:http/testing.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:resto_app_v3/api/api_service.dart';
 import 'package:resto_app_v3/model/restaurant.dart';
 import 'package:resto_app_v3/provider/list_provider.dart';
-// import 'package:my_restaurant/data/api/api_service.dart';
-// import 'package:my_restaurant/data/model/restaurant.dart';
-// import 'package:my_restaurant/data/provider/list_provider.dart';
 
 import 'json_parsing_test.mocks.dart';
 
@@ -71,8 +67,6 @@ void main() {
 
   test('list parsing', () async {
 
-    // Use Mockito to return a successful response when it calls the
-    // provided http.Client.
     when(client
         .get(Uri.parse('https://restaurant-api.dicoding.dev/list')))
         .thenAnswer((_) async =>

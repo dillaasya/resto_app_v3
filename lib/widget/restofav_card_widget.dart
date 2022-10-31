@@ -14,7 +14,9 @@ class RestoFavCard extends StatelessWidget {
             arguments: restaurant);
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10,),
+        padding: const EdgeInsets.symmetric(
+          vertical: 10,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

@@ -148,8 +148,8 @@ Widget _buildPrimaryCarousel() {
       height: 230,
       child: ChangeNotifierProvider(
         create: (_) => ListProvider(
-        apiService: ApiService(),
-      ),
+          apiService: ApiService(),
+        ),
         child: Consumer<ListProvider>(
           builder: (context, state, _) {
             if (state.state == ResultState.loading) {
@@ -164,7 +164,7 @@ Widget _buildPrimaryCarousel() {
                       itemCount: state.result.restaurants.length,
                       itemBuilder: (context, index) {
                         var restaurant = state.result.restaurants[index];
-      
+
                         return FirstCarouselCard(restaurant: restaurant);
                       },
                     ),
@@ -192,8 +192,8 @@ Widget _buildSecondaryCarousel() {
       height: 160,
       child: ChangeNotifierProvider(
         create: (_) => ListProvider(
-        apiService: ApiService(),
-      ),
+          apiService: ApiService(),
+        ),
         child: Consumer<ListProvider>(
           builder: (context, state, _) {
             if (state.state == ResultState.loading) {

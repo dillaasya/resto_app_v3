@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final restaurantDetails = restaurantDetailsFromJson(jsonString);
-
 class RestaurantDetails {
   RestaurantDetails({
     required this.error,

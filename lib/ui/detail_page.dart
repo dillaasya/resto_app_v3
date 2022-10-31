@@ -37,12 +37,18 @@ class _DetailPageState extends State<DetailPage> {
           context: context,
           builder: (builder) {
             return AddNewReview(
-                name: name, message: message, id: widget.restaurant.id, mounted: mounted, restaurant: widget.restaurant,);
+              name: name,
+              message: message,
+              id: widget.restaurant.id,
+              mounted: mounted,
+              restaurant: widget.restaurant,
+            );
           });
     }
 
     return ChangeNotifierProvider<DetailProvider>(
-      create: (_) => DetailProvider(apiService: ApiService(), id: widget.restaurant.id),
+      create: (_) =>
+          DetailProvider(apiService: ApiService(), id: widget.restaurant.id),
       child: Consumer<DetailProvider>(
         builder: (context, state, _) {
           if (state.state == ResultState.loading) {
@@ -71,7 +77,8 @@ class _DetailPageState extends State<DetailPage> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(10),
                                       child: Hero(
-                                        tag: "image-resto${widget.restaurant.id}",
+                                        tag:
+                                            "image-resto${widget.restaurant.id}",
                                         child: Image.network(
                                           'https://restaurant-api.dicoding.dev/images/medium/${detail.pictureId}',
                                           fit: BoxFit.cover,
@@ -90,14 +97,16 @@ class _DetailPageState extends State<DetailPage> {
                                               icon: const Icon(Icons.favorite),
                                               color: Colors.red,
                                               onPressed: () =>
-                                                  provider.removeFavorite(widget.restaurant.id),
+                                                  provider.removeFavorite(
+                                                      widget.restaurant.id),
                                             )
                                           : IconButton(
                                               icon: const Icon(
                                                   Icons.favorite_border),
                                               color: const Color(0xFFaeaeae),
                                               onPressed: () =>
-                                                  provider.addFavorite(widget.restaurant),
+                                                  provider.addFavorite(
+                                                      widget.restaurant),
                                             ),
                                     ),
                                   )
@@ -196,7 +205,9 @@ class _DetailPageState extends State<DetailPage> {
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold)),
                                 children: detail.menus.foods
-                                    .map<Widget>((e) => buildMenuItem(e.name),)
+                                    .map<Widget>(
+                                      (e) => buildMenuItem(e.name),
+                                    )
                                     .toList(),
                               ),
                               ExpansionTile(
@@ -207,7 +218,9 @@ class _DetailPageState extends State<DetailPage> {
                                       fontWeight: FontWeight.bold),
                                 ),
                                 children: detail.menus.drinks
-                                    .map<Widget>((e) => buildMenuItem(e.name),)
+                                    .map<Widget>(
+                                      (e) => buildMenuItem(e.name),
+                                    )
                                     .toList(),
                               ),
                               ExpansionTile(
@@ -263,9 +276,7 @@ class _DetailPageState extends State<DetailPage> {
     );
   }
 
-  Widget buildMenuItem(
-    String name
-  ) {
+  Widget buildMenuItem(String name) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Card(

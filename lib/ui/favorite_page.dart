@@ -40,7 +40,10 @@ class FavoritePage extends StatelessWidget {
                             } else {
                               return Column(
                                 children: const [
-                                  Text('There\'s empty here, try to add some favorited restaurant',textAlign: TextAlign.center,)
+                                  Text(
+                                    'There\'s empty here, try to add some favorited restaurant',
+                                    textAlign: TextAlign.center,
+                                  )
                                 ],
                               );
                             }
