@@ -1,9 +1,17 @@
 import 'package:http/http.dart' as http;
+import 'package:http/http.dart' show Client;
+
 import 'package:resto_app_v3/model/restaurant.dart';
 import 'package:resto_app_v3/model/restaurant_detail.dart';
 import 'dart:convert';
 
 class ApiService {
+  Client? client;
+
+  ApiService({this.client}) {
+    client ??= Client();
+  }
+
   static const String _baseUrl = 'https://restaurant-api.dicoding.dev/';
   static const String _main = 'list';
   static const String _detail = 'detail/';
