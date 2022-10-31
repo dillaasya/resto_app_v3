@@ -7,8 +7,8 @@ void main() {
       () async {
     // arrange
     var id = "rqdv5juczeskfw1e867";
-    var name = "Adilla";
-    var review = "Menu bervariasi";
+    var name = "Justin";
+    var review = "I love this place!";
     // act
     Future<bool> addReviewTest() async {
       late bool status;
