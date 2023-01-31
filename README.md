@@ -14,7 +14,7 @@ Merupakan project lanjutan dari resto_ap_v1 dan resto_app_v2
 7. get Search (API - Provider State Management)
 8. Alarm Notification
 
-## Fitur
+## Library
 
 base API : [lINK](https://restaurant-api.dicoding.dev/)
 library :
