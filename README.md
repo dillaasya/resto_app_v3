@@ -1,16 +1,33 @@
 # resto_app_v3
 
-A new Flutter project.
+Project terakhir Flutter Fundamental - DICODING
+Merupakan project lanjutan dari resto_ap_v1 dan resto_app_v2
 
-## Getting Started
+## Fitur
 
-This project is a starting point for a Flutter application.
+1. Splash screen
+2. Switch Theme
+3. Local Favorite
+4. get List (API - Provider State Management)
+5. get Detail (API - Provider State Management)
+6. post Review (API - Provider State Management)
+7. get Search (API - Provider State Management)
+8. Alarm Notification
 
-A few resources to get you started if this is your first Flutter project:
+## Fitur
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+base API : [lINK](https://restaurant-api.dicoding.dev/)
+library :
+  android_alarm_manager_plus
+  cupertino_icons
+  flutter_local_notifications
+  google_fonts
+  http
+  intl
+  provider
+  readmore
+  rxdart
+  shared_preferences
+  sqflite
+  mockito
+  build_runner
