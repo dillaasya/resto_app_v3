@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:resto_app_v3/api/api_service.dart';
+import 'package:provider/provider.dart';
 import 'package:resto_app_v3/model/restaurant.dart';
+import 'package:resto_app_v3/model/restaurant_review.dart';
+import 'package:resto_app_v3/provider/review_provider.dart';
 import 'package:resto_app_v3/ui/detail_page.dart';
 
 class AddNewReview extends StatelessWidget {
@@ -22,6 +24,26 @@ class AddNewReview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Future<void> post() async {
+      var provider = Provider.of<ReviewProvider>(context, listen: false);
+      CustomerReviews customerReviews = CustomerReviews(
+          name: name.text,
+          id: id,
+          review: message.text,
+          date: DateTime.now().toString());
+
+      await provider.postReview(customerReviews);
+      if (provider.isback && mounted) {
+        Navigator.pop(context);
+        Navigator.pushReplacementNamed(context, DetailPage.routeName,
+            arguments: id);
+      } else if (provider.isback == false) {
+        print('NAH LOH EROR, ID REVIEW : $id');
+      } else {
+        print('I DONT KNOW');
+      }
+    }
+
     return SingleChildScrollView(
         child: Container(
       padding: EdgeInsets.only(
@@ -89,16 +111,8 @@ class AddNewReview extends StatelessWidget {
                 style: TextButton.styleFrom(
                   backgroundColor: const Color(0xffE23E3E),
                 ),
-                onPressed: () async {
-                  await ApiService().postReview(id, name.text, message.text);
-
-                  name.clear();
-                  message.clear();
-                  if (!mounted) return;
-
-                  Navigator.pop(context);
-                  Navigator.pushReplacementNamed(context, DetailPage.routeName,
-                      arguments: restaurant);
+                onPressed: (){
+                  post();
                 },
                 child: Text('Add',
                     style: GoogleFonts.poppins(

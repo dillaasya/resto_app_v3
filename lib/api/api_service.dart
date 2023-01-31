@@ -1,9 +1,13 @@
+import 'dart:developer';
+
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart' show Client;
 
 import 'package:resto_app_v3/model/restaurant.dart';
 import 'package:resto_app_v3/model/restaurant_detail.dart';
 import 'dart:convert';
+
+import 'package:resto_app_v3/model/restaurant_review.dart';
 
 class ApiService {
   Client? client;
@@ -27,24 +31,20 @@ class ApiService {
     }
   }
 
-  Future<bool> postReview(String id, String name, String review) async {
-    bool status = false;
+  Future<http.Response?> postReview(CustomerReviews review) async {
+    http.Response? response;
 
-    final response = await http.post(
-      Uri.parse(_baseUrl + _review),
-      headers: {"Content-Type": "application/json"},
-      body: json.encode({'id': id, 'name': name, 'review': review}),
-    );
+    try{
+      response = await http.post(
+        Uri.parse(_baseUrl + _review),
+        headers: {"Content-Type": " application/json"},
+        body: json.encode(review),
 
-    if (response.statusCode == 201) {
-      status = response.body.isNotEmpty;
-    } else if (response.statusCode == 400) {
-      throw response.statusCode.toString();
-    } else if (response.statusCode == 500) {
-      throw Exception("terjadi kesalahan pada server kami");
+      );
+    }catch(e){
+      log(e.toString());
     }
-
-    return status;
+    return response;
   }
 
   Future<RestaurantDetails> detailList(String? id) async {
